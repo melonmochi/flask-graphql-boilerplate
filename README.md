@@ -36,12 +36,6 @@ pip install -r requirements.txt
 flask run
 ```
 
-## 🏃 Run unit tests
-
-```python
-pytest
-```
-
 Open your browser and visit <http://127.0.0.1:5000/hello>
 
 ## 🤝 Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
