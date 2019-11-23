@@ -1,0 +1,22 @@
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import Column, String
+
+db = SQLAlchemy()
+
+
+#  People Model
+class Departments(db.Model):
+    __tablename__ = 'departments'
+
+    dept_no = Column(String(4), primary_key=True)
+    dept_name = Column(String(40), unique=True, nullable=False)
+
+    @property
+    def serializable(self):
+        return {
+            'id': self.dept_no,
+            'name': self.dept_name,
+        }
+
+    def __repr__(self):
+        return '<Departments %r>' % self.dept_name

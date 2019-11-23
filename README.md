@@ -38,6 +38,14 @@ flask run
 
 Open your browser and visit <http://127.0.0.1:5000/hello>
 
+## 🦋 Examples
+
+<http://127.0.0.1:5000/departments>:
+
+```json
+[{"id":"d001","name":"Marketing"},{"id":"d002","name":"Finance"},{"id":"d003","name":"Human Resources"},{"id":"d004","name":"Production"},{"id":"d005","name":"Development"},{"id":"d006","name":"Quality Management"},{"id":"d007","name":"Sales"},{"id":"d008","name":"Research"},{"id":"d009","name":"Customer Service"}]
+```
+
 ## 🤝 Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 We welcome all contributions.
