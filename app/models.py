@@ -11,6 +11,10 @@ class Departments(db.Model):
     dept_no = Column(String(4), primary_key=True)
     dept_name = Column(String(40), unique=True, nullable=False)
 
+    def __init__(self, dept_no, dept_name):
+        self.dept_no = dept_no
+        self.dept_name = dept_name
+
     @property
     def serializable(self):
         return {
