@@ -4,7 +4,7 @@ from sqlalchemy import Column, String
 db = SQLAlchemy()
 
 
-#  People Model
+#  Departments Model
 class Departments(db.Model):
     __tablename__ = 'departments'
 
