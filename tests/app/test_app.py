@@ -1,3 +1,3 @@
-def test_hello(client):
-    hello = client.get('/hello')
-    assert b'Hello, World!' in hello.data
+def test_departments(client):
+    response = client.get('/departments')
+    assert response.status_code == 200
