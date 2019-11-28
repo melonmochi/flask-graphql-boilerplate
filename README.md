@@ -15,7 +15,7 @@ python -m venv env
 Linux:
 
 ```bash
-source venv/bin/activate
+source env/bin/activate
 ```
 
 Windows:
@@ -35,8 +35,6 @@ pip install -r requirements.txt
 ```python
 flask run
 ```
-
-Open your browser and visit <http://127.0.0.1:5000/hello>
 
 ## 🦋 Examples
 
