@@ -2,7 +2,7 @@
 
 English | [Español](./README-es_ES.md)
 
-[![CircleCI branch](https://img.shields.io/circleci/build/github/melonmochi/flask-graphql-boilerplate/master.svg?style=flat-square)](https://circleci.com/gh/melonmochi/flask-graphql-boilerplate) [![Codecov](https://img.shields.io/codecov/c/github/melonmochi/flask-graphql-boilerplate/master.svg?style=flat-square)](https://codecov.io/gh/melonmochi/flask-graphql-boilerplate/branch/master) [![Dependencies](https://img.shields.io/david/melonmochi/flask-graphql-boilerplate.svg?style=flat-square)](https://david-dm.org/melonmochi/flask-graphql-boilerplate) [![DevDependencies](https://img.shields.io/david/dev/melonmochi/flask-graphql-boilerplate.svg?style=flat-square)](https://david-dm.org/melonmochi/flask-graphql-boilerplate?type=dev)
+[![CircleCI branch](https://img.shields.io/circleci/build/github/melonmochi/flask-graphql-boilerplate/master.svg?style=flat-square)](https://circleci.com/gh/melonmochi/flask-graphql-boilerplate) [![Codecov](https://img.shields.io/codecov/c/github/melonmochi/flask-graphql-boilerplate/master.svg?style=flat-square)](https://codecov.io/gh/melonmochi/flask-graphql-boilerplate/branch/master) [![Requirements Status](https://requires.io/github/melonmochi/flask-graphql-boilerplate/requirements.svg?branch=master)](https://requires.io/github/melonmochi/flask-graphql-boilerplate/requirements/?branch=master)
 
 ## ⌨️ Development
 
