@@ -4,15 +4,15 @@
 --  it does not correspond to real people.
 --  Any similarity to existing people is purely coincidental.
 
-DROP TABLE salaries;
-DROP TABLE titles;
-DROP INDEX dept_emp_dept_no_idx;
-DROP TABLE dept_emp;
-DROP INDEX dept_manager_dept_no_idx;
-DROP TABLE dept_manager;
-DROP TABLE departments;
-DROP TABLE employees;
-DROP TYPE gender;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS titles;
+DROP INDEX IF EXISTS dept_emp_dept_no_idx;
+DROP TABLE IF EXISTS dept_emp;
+DROP INDEX IF EXISTS dept_manager_dept_no_idx;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS departments;
+DROP TABLE IF EXISTS employees;
+DROP TYPE IF EXISTS gender;
 
 CREATE TYPE gender AS ENUM('M', 'F');
 CREATE TABLE employees (

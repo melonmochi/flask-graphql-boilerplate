@@ -5,7 +5,11 @@ class Config(object):
 
 
 class CIConfig(Config):
-    SQLALCHEMY_DATABASE_URI = ''
+    from publics import CI_DB
+    user, pw, host, port, db = CI_DB['user'], CI_DB['pw'], CI_DB[
+        'host'], CI_DB['port'], CI_DB['db']
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = f'postgresql://{user}:{pw}@{host}:{port}/{db}'
 
 
 class DevelopmentConfig(Config):
