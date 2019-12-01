@@ -13,6 +13,7 @@ CONFIG_MAPPER = {
 def create_app():
     app = Flask(__name__)
     env = os.getenv('FLASK_ENV')
+    print(env)
     try:
         app.config.from_object(CONFIG_MAPPER[env])
     except KeyError:
