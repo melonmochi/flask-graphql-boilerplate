@@ -11,11 +11,11 @@ jobs:
       - image: circleci/python:3.8.0
         environment:
           DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/flask-graphql-boilerplate-ci
+          FLASK_ENV: CI
 
       # CircleCI PostgreSQL image
       - image: circleci/postgres:latest
         environment:
-          FLASK_ENV: CI
           POSTGRES_DB: flask-graphql-boilerplate-ci
           POSTGRES_PASSWORD: postgres
           POSTGRES_USER: postgres
