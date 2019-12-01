@@ -15,6 +15,7 @@ jobs:
       # CircleCI PostgreSQL image
       - image: circleci/postgres:latest
         environment:
+          FLASK_ENV: CI
           POSTGRES_DB: flask-graphql-boilerplate-ci
           POSTGRES_PASSWORD: postgres
           POSTGRES_USER: postgres
@@ -57,7 +58,6 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            export FLASK_ENV=CI
             pytest --cov=app
             codecov
 
