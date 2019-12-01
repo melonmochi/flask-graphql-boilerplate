@@ -10,13 +10,14 @@ jobs:
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
       - image: circleci/python:3.8.0
         environment:
-          DATABASE_URL: postgresql://root@localhost/flask-graphql-boilerplate-test?sslmode=disable
+          DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/flask-graphql-boilerplate-ci
 
       # CircleCI PostgreSQL image
       - image: circleci/postgres:latest
         environment:
-          POSTGRES_USER: root
-          POSTGRES_DB: flask-graphql-boilerplate-test
+          POSTGRES_DB: flask-graphql-boilerplate-ci
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -46,6 +47,12 @@ jobs:
           paths:
             - ./venv
           key: v1-dependencies-{{ checksum "requirements.txt" }}
+
+      # set environment!
+      - run:
+          name: set environment
+          command: |
+            export FLASK_ENV=CI
 
       # run tests!
       # this example uses Django's built-in test-runner
