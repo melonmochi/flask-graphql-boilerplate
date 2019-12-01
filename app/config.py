@@ -5,7 +5,7 @@ def get_aws_rds():
     try:
         from secrets import AWS_RDS_DB
     except ImportError:
-        AWS_RDS_DB = None
+        AWS_RDS_DB = TESTING_DB
     return AWS_RDS_DB
 
 
@@ -28,10 +28,6 @@ class CIConfig(Config):
 
 class DevelopmentConfig(Config):
     DB = get_aws_rds()
-
-    if DB is None:
-        DB = TESTING_DB
-
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = db_url(DB)
 
