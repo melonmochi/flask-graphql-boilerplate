@@ -58,7 +58,9 @@ jobs:
             FLASK_ENV: CI
           name: run tests
           command: |
+            printenv
             . venv/bin/activate
+            printenv
             pytest --cov=app
             codecov
 
