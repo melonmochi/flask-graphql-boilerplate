@@ -54,13 +54,8 @@ jobs:
       # https://pytest.org
       # https://nose.readthedocs.io
       - run:
-          name: "Setup custom environment variables"
-          command: |
-            echo 'export FLASK_ENV="CI"' >> $BASH_ENV # Redirect MY_ENV_VAR into $BASH_ENV
-      - run:
-          name: "What was my custom environment variable?"
-          command: echo ${MY_ENV_VAR} # prints: XXXXXXX
-      - run:
+          environment:
+            FLASK_ENV: CI
           name: run tests
           command: |
             . venv/bin/activate
