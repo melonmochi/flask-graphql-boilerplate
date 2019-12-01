@@ -1,3 +1,20 @@
+from publics import CI_DB, TESTING_DB
+
+
+def get_aws_rds():
+    try:
+        from secrets import AWS_RDS_DB
+    except ImportError:
+        AWS_RDS_DB = None
+    return AWS_RDS_DB
+
+
+def db_url(connect_args):
+    user, pw, host, port, db = connect_args['user'], connect_args[
+        'pw'], connect_args['host'], connect_args['port'], connect_args['db']
+    return f'postgresql://{user}:{pw}@{host}:{port}/{db}'
+
+
 # DB URLS for each Environment
 class Config(object):
     SQLALCHEMY_ECHO = True
@@ -5,26 +22,20 @@ class Config(object):
 
 
 class CIConfig(Config):
-    from publics import CI_DB
-    user, pw, host, port, db = CI_DB['user'], CI_DB['pw'], CI_DB[
-        'host'], CI_DB['port'], CI_DB['db']
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = f'postgresql://{user}:{pw}@{host}:{port}/{db}'
+    SQLALCHEMY_DATABASE_URI = db_url(CI_DB)
 
 
 class DevelopmentConfig(Config):
-    from secrets import AWS_RDS_DB
-    aws_rds_user, aws_rds_pw, aws_rds_host, aws_rds_port, aws_rds_db = AWS_RDS_DB[
-        'user'], AWS_RDS_DB['pw'], AWS_RDS_DB['host'], AWS_RDS_DB[
-            'port'], AWS_RDS_DB['db']
+    DB = get_aws_rds()
+
+    if DB is None:
+        DB = TESTING_DB
+
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = f'postgresql://\
-      {aws_rds_user}:{aws_rds_pw}@{aws_rds_host}:{aws_rds_port}/{aws_rds_db}'
+    SQLALCHEMY_DATABASE_URI = db_url(DB)
 
 
 class TestingConfig(Config):
-    from publics import TESTING_DB
-    user, pw, host, port, db = TESTING_DB['user'], TESTING_DB[
-        'pw'], TESTING_DB['host'], TESTING_DB['port'], TESTING_DB['db']
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = f'postgresql://{user}:{pw}@{host}:{port}/{db}'
+    SQLALCHEMY_DATABASE_URI = db_url(TESTING_DB)
