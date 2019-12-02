@@ -4,10 +4,10 @@ from publics import CI_DB, TESTING_DB
 def get_db():
     ''' Try to get user's own database from the no public file secrets.py in the root directory '''
     try:
-        from secrets import AWS_RDS_DB
+        from secrets import DB
     except ImportError:
-        AWS_RDS_DB = TESTING_DB
-    return AWS_RDS_DB
+        DB = TESTING_DB
+    return DB
 
 
 def db_url(connect_args):
@@ -30,6 +30,11 @@ class CIConfig(Config):
 class DevelopmentConfig(Config):
     DB = get_db()
     DEBUG = True
+    SQLALCHEMY_DATABASE_URI = db_url(DB)
+
+
+class ProductionConfig(Config):
+    DB = get_db()
     SQLALCHEMY_DATABASE_URI = db_url(DB)
 
 
