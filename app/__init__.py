@@ -4,9 +4,9 @@ from app.config import CIConfig, DevelopmentConfig, TestingConfig
 from app.models import db
 
 CONFIG_MAPPER = {
-    'CI': CIConfig,
-    'DEVELOPMENT': DevelopmentConfig,
-    'TESTING': TestingConfig,
+    'ci': CIConfig,
+    'development': DevelopmentConfig,
+    'testing': TestingConfig,
 }
 
 

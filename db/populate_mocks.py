@@ -1,23 +1,21 @@
 from pathlib import Path
 
-db_path = Path(__file__).parent
+folder_path = Path(__file__).parent
+
+
+def excute_sql(db, script_file):
+    script_path = folder_path / script_file
+    with script_path.open() as script:
+        script_sql = script.read()
+        db.session.execute(script_sql)
 
 
 def populate_mocks(db):
     '''CREATE schemas'''
-    schemas_path = db_path / "schemas.sql"
-    with schemas_path.open() as schemas:
-        schemas_sql_scripts = schemas.read()
-        db.session.execute(schemas_sql_scripts)
+    excute_sql(db, "schemas.sql")
     '''TABLE employees'''
-    employees_path = db_path / "employees.sql"
-    with employees_path.open() as emp:
-        emp_sql_scripts = emp.read()
-        db.session.execute(emp_sql_scripts)
+    excute_sql(db, "employees.sql")
     '''TABLE departments'''
-    departments_path = db_path / "departments.sql"
-    with departments_path.open() as dep:
-        dep_sql_scripts = dep.read()
-        db.session.execute(dep_sql_scripts)
+    excute_sql(db, "departments.sql")
 
     db.session.commit()
