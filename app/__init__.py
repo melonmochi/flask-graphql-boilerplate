@@ -14,13 +14,10 @@ CONFIG_MAPPER = {
 def create_app():
     app = Flask(__name__)
     env = os.getenv('FLASK_ENV')
-    print('os env is', env)
     try:
         app.config.from_object(CONFIG_MAPPER[env])
     except KeyError:
         app.config.from_object(DevelopmentConfig)
-
-    print('app.config.db is', app.config['SQLALCHEMY_DATABASE_URI'])
 
     db.init_app(app)
 
