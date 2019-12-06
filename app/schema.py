@@ -1,5 +1,5 @@
 import graphene
-from graphene import relay
+from graphene import relay, Int
 from graphene_sqlalchemy import SQLAlchemyObjectType, SQLAlchemyConnectionField
 from app.models import Department, Employee
 
@@ -14,6 +14,11 @@ class DepartmentConnection(relay.Connection):
     class Meta:
         node = Department
 
+    total_count = Int()
+
+    def resolve_total_count(root, info):
+        return root.length
+
 
 class Employee(SQLAlchemyObjectType):
     class Meta:
@@ -24,6 +29,11 @@ class Employee(SQLAlchemyObjectType):
 class EmployeeConnection(relay.Connection):
     class Meta:
         node = Employee
+
+    total_count = Int()
+
+    def resolve_total_count(root, info):
+        return root.length
 
 
 class Query(graphene.ObjectType):
