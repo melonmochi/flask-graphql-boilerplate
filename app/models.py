@@ -5,7 +5,7 @@ db = SQLAlchemy()
 
 
 #  Departments Model
-class Departments(db.Model):
+class Department(db.Model):
     __tablename__ = 'departments'
 
     dept_no = Column(String(4), primary_key=True)
@@ -23,11 +23,11 @@ class Departments(db.Model):
         }
 
     def __repr__(self):
-        return '<Departments %r>' % self.dept_name
+        return '<Department %r>' % self.dept_name
 
 
 #  Employees Model
-class Employees(db.Model):
+class Employee(db.Model):
     __tablename__ = 'employees'
 
     emp_no = Column(Integer, primary_key=True)
@@ -58,4 +58,4 @@ class Employees(db.Model):
         }
 
     def __repr__(self):
-        return '<Employees %r>' % self.first_name
+        return '<Employee %r>' % self.first_name
