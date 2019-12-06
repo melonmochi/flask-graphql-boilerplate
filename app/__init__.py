@@ -1,27 +1,9 @@
-import os
 from flask import Flask
-from app.config import CIConfig, DevelopmentConfig, ProductionConfig, TestingConfig
+from app.utils import config_app
 from app.models import db
+from app.views import api
 
-CONFIG_MAPPER = {
-    'ci': CIConfig,
-    'development': DevelopmentConfig,
-    'production': ProductionConfig,
-    'testing': TestingConfig,
-}
-
-
-def create_app():
-    app = Flask(__name__)
-    env = os.getenv('FLASK_ENV')
-    try:
-        app.config.from_object(CONFIG_MAPPER[env])
-    except KeyError:
-        app.config.from_object(DevelopmentConfig)
-
-    db.init_app(app)
-
-    from app.views import api
-    app.register_blueprint(api)
-
-    return app
+app = Flask(__name__)
+config_app(app)
+db.init_app(app)
+app.register_blueprint(api)

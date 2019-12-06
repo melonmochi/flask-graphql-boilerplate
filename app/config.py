@@ -2,7 +2,7 @@ from publics import CI_DB, TESTING_DB
 
 
 def get_db():
-    ''' Try to get user's own database from the no public file secrets.py in the root directory '''
+    ''' Try to get user's own database'''
     try:
         from secrets import DB
     except ImportError:
