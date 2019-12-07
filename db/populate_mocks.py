@@ -17,5 +17,13 @@ def populate_mocks(db):
     excute_sql(db, "employees.sql")
     '''TABLE departments'''
     excute_sql(db, "departments.sql")
+    '''TABLE dept_emp'''
+    excute_sql(db, "dept_emp.sql")
+    '''TABLE dept_manager'''
+    excute_sql(db, "dept_manager.sql")
+    '''TABLE titles'''
+    excute_sql(db, "titles.sql")
+    '''TABLE salaries'''
+    excute_sql(db, "salaries.sql")
 
     db.session.commit()

@@ -1,11 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Column, Date, Integer, String
+from sqlalchemy import Column, Date, Integer, String, ForeignKey
 
 db = SQLAlchemy()
 
 
 #  Departments Model
-class Department(db.Model):
+class DepartmentModel(db.Model):
     __tablename__ = 'departments'
 
     dept_no = Column(String(4), primary_key=True)
@@ -27,7 +27,7 @@ class Department(db.Model):
 
 
 #  Employees Model
-class Employee(db.Model):
+class EmployeeModel(db.Model):
     __tablename__ = 'employees'
 
     emp_no = Column(Integer, primary_key=True)
@@ -59,3 +59,47 @@ class Employee(db.Model):
 
     def __repr__(self):
         return '<Employee %r>' % self.first_name
+
+
+#  Department-Employee Model
+class DeptEmpModel(db.Model):
+    __tablename__ = 'dept_emp'
+
+    emp_no = Column(Integer,
+                    ForeignKey(EmployeeModel.emp_no),
+                    primary_key=True,
+                    nullable=False)
+    dept_no = Column(Date,
+                     ForeignKey(DepartmentModel.dept_no),
+                     primary_key=True,
+                     nullable=False)
+    from_date = Column(Date, nullable=False)
+    to_date = Column(Date, nullable=False)
+
+
+#  Department-Manager Model
+class DeptManagerModel(db.Model):
+    __tablename__ = 'dept_manager'
+
+    dept_no = Column(Date,
+                     ForeignKey(DepartmentModel.dept_no),
+                     primary_key=True,
+                     nullable=False)
+    emp_no = Column(Integer,
+                    ForeignKey(EmployeeModel.emp_no),
+                    primary_key=True,
+                    nullable=False)
+    from_date = Column(Date, nullable=False)
+    to_date = Column(Date, nullable=False)
+
+
+class TitleModel(db.Model):
+    __tablename__ = 'titles'
+
+    emp_no = Column(Integer,
+                    ForeignKey(EmployeeModel.emp_no),
+                    primary_key=True,
+                    nullable=False)
+    title = Column(String(50), primary_key=True, nullable=False)
+    from_date = Column(Date, primary_key=True, nullable=False)
+    to_date = Column(Date)
