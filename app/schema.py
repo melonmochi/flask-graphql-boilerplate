@@ -14,14 +14,6 @@ class ActiveSQLAlchemyObjectType(SQLAlchemyObjectType):
     def query(cls, info):
         return cls.get_query(info)
 
-    @classmethod
-    def get_all_nodes(query):
-        return query.all()
-
-    @classmethod
-    def get_node_by_id(query, id):
-        return query.filter_by(id=id).first()
-
 
 class Department(ActiveSQLAlchemyObjectType):
     class Meta:
@@ -91,7 +83,7 @@ class Query(ObjectType):
 
     def resolve_departments(self, info, **args):
         q = args.get("q")
-        return Department.filter_by_q(query=Department.query(info), q=q)
+        return Department.filter_by_q(query=Department.query(info), q=q or '')
 
     department = Field(Department, dept_no=String(required=True))
 
