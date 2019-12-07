@@ -1,9 +1,9 @@
 from graphene.test import Client
-from app.schema import schema
 from app import app
+from app.schema import schema
 
-app.app_context().push()
 client = Client(schema)
+app.app_context().push()
 
 
 def test_departments(snapshot):

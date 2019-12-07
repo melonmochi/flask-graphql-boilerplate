@@ -16,49 +16,6 @@ snapshots['test_department 1'] = {
     }
 }
 
-snapshots['test_departments 1'] = {
-    'data': {
-        'departments': [
-            {
-                'deptName': 'Marketing',
-                'deptNo': 'd001'
-            },
-            {
-                'deptName': 'Finance',
-                'deptNo': 'd002'
-            },
-            {
-                'deptName': 'Human Resources',
-                'deptNo': 'd003'
-            },
-            {
-                'deptName': 'Production',
-                'deptNo': 'd004'
-            },
-            {
-                'deptName': 'Development',
-                'deptNo': 'd005'
-            },
-            {
-                'deptName': 'Quality Management',
-                'deptNo': 'd006'
-            },
-            {
-                'deptName': 'Sales',
-                'deptNo': 'd007'
-            },
-            {
-                'deptName': 'Research',
-                'deptNo': 'd008'
-            },
-            {
-                'deptName': 'Customer Service',
-                'deptNo': 'd009'
-            }
-        ]
-    }
-}
-
 snapshots['test_employee 1'] = {
     'data': {
         'employee': {
@@ -581,5 +538,48 @@ snapshots['test_employees 2'] = {
                 }
             ]
         }
+    }
+}
+
+snapshots['test_departments 1'] = {
+    'data': {
+        'departments': [
+            {
+                'deptName': 'Marketing',
+                'deptNo': 'd001'
+            },
+            {
+                'deptName': 'Finance',
+                'deptNo': 'd002'
+            },
+            {
+                'deptName': 'Human Resources',
+                'deptNo': 'd003'
+            },
+            {
+                'deptName': 'Production',
+                'deptNo': 'd004'
+            },
+            {
+                'deptName': 'Development',
+                'deptNo': 'd005'
+            },
+            {
+                'deptName': 'Quality Management',
+                'deptNo': 'd006'
+            },
+            {
+                'deptName': 'Sales',
+                'deptNo': 'd007'
+            },
+            {
+                'deptName': 'Research',
+                'deptNo': 'd008'
+            },
+            {
+                'deptName': 'Customer Service',
+                'deptNo': 'd009'
+            }
+        ]
     }
 }
