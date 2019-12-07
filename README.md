@@ -50,7 +50,7 @@ flask run
 
 <https://kthhld4776.execute-api.eu-west-1.amazonaws.com/dev/graphql>
 
-```json
+```yaml
 {
   departments(q: "es"){
     deptName
