@@ -1,0 +1,10 @@
+{
+  "dev": {
+    "app_function": "app.__init__.app",
+    "profile_name": "default",
+    "project_name": "flask-graphql-b",
+    "runtime": "python3.7",
+    "s3_bucket": "zappa-01ok73req",
+    "aws_region": "eu-west-1"
+  }
+}
