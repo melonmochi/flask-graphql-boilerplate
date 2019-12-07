@@ -23,6 +23,7 @@ Flask-SQLAlchemy==2.4.1
 future==0.16.0
 graphene==2.1.8
 graphene-sqlalchemy==2.2.2
+graphene-sqlalchemy-filter==1.10.0
 graphql-core==2.2.1
 graphql-relay==2.0.0
 graphql-server-core==1.1.1
