@@ -58,7 +58,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest --cov=app
+            pytest --cov=app --snapshot-update
             codecov
 
       - store_artifacts:
