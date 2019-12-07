@@ -8,21 +8,24 @@ from snapshottest import Snapshot
 snapshots = Snapshot()
 
 snapshots['test_department 1'] = {
-    'data': {
-        'departments': None
-    },
     'errors': [
         {
             'locations': [
                 {
-                    'column': 11,
-                    'line': 3
+                    'column': 13,
+                    'line': 4
                 }
             ],
-            'message': 'No application found. Either work inside a view function or push an application context. See http://flask-sqlalchemy.pocoo.org/contexts/.',
-            'path': [
-                'departments'
-            ]
+            'message': 'Cannot query field "totalCount" on type "Department".'
+        },
+        {
+            'locations': [
+                {
+                    'column': 13,
+                    'line': 5
+                }
+            ],
+            'message': 'Cannot query field "edges" on type "Department".'
         }
     ]
 }
