@@ -81,7 +81,7 @@ class DeptEmpModel(db.Model):
 class DeptManagerModel(db.Model):
     __tablename__ = 'dept_manager'
 
-    dept_no = Column(Date,
+    dept_no = Column(String(4),
                      ForeignKey(DepartmentModel.dept_no),
                      primary_key=True,
                      nullable=False)

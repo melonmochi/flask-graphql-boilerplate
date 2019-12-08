@@ -94,6 +94,11 @@ flask run
     empNo
     firstName
     lastName
+    isManager
+    department{
+      deptNo
+      deptName
+    }
   }
 }
 ```
@@ -119,106 +124,106 @@ response:
       "deptName": "Human Resources"
     },
     "employees": {
-      "totalCount": 17,
+      "totalCount": 23,
       "edges": [
         {
           "node": {
-            "empNo": "10065",
-            "birthDate": "1963-04-14",
-            "firstName": "Satosi",
-            "lastName": "Awdeh",
+            "empNo": "110085",
+            "birthDate": "1959-10-28",
+            "firstName": "Ebru",
+            "lastName": "Alpin",
             "gender": "M",
-            "hireDate": "1988-05-18"
+            "hireDate": "1985-01-01"
           }
         },
         {
           "node": {
-            "empNo": "10077",
-            "birthDate": "1964-04-18",
-            "firstName": "Mona",
-            "lastName": "Azuma",
-            "gender": "M",
-            "hireDate": "1990-03-02"
-          }
-        },
-        {
-          "node": {
-            "empNo": "10003",
-            "birthDate": "1959-12-03",
-            "firstName": "Parto",
-            "lastName": "Bamford",
-            "gender": "M",
-            "hireDate": "1986-08-28"
-          }
-        },
-        {
-          "node": {
-            "empNo": "10039",
-            "birthDate": "1959-10-01",
-            "firstName": "Alejandro",
-            "lastName": "Brender",
-            "gender": "M",
-            "hireDate": "1988-01-19"
-          }
-        },
-        {
-          "node": {
-            "empNo": "10044",
-            "birthDate": "1961-09-21",
-            "firstName": "Mingsen",
-            "lastName": "Casley",
+            "empNo": "111692",
+            "birthDate": "1954-10-05",
+            "firstName": "Tonny",
+            "lastName": "Butterworth",
             "gender": "F",
-            "hireDate": "1994-05-21"
+            "hireDate": "1985-01-01"
           }
         },
         {
           "node": {
-            "empNo": "10035",
-            "birthDate": "1953-02-08",
-            "firstName": "Alain",
-            "lastName": "Chappelet",
-            "gender": "M",
-            "hireDate": "1988-09-05"
-          }
-        },
-        {
-          "node": {
-            "empNo": "10022",
-            "birthDate": "1952-07-08",
-            "firstName": "Shahaf",
-            "lastName": "Famili",
-            "gender": "M",
-            "hireDate": "1995-08-22"
-          }
-        },
-        {
-          "node": {
-            "empNo": "10014",
-            "birthDate": "1956-02-12",
-            "firstName": "Berni",
-            "lastName": "Genin",
-            "gender": "M",
-            "hireDate": "1987-03-11"
-          }
-        },
-        {
-          "node": {
-            "empNo": "10100",
-            "birthDate": "1953-04-21",
-            "firstName": "Hironobu",
-            "lastName": "Haraldson",
+            "empNo": "110344",
+            "birthDate": "1961-09-07",
+            "firstName": "Rosine",
+            "lastName": "Cools",
             "gender": "F",
-            "hireDate": "1987-09-21"
+            "hireDate": "1985-11-22"
           }
         },
         {
           "node": {
-            "empNo": "10084",
-            "birthDate": "1960-05-25",
-            "firstName": "Tuval",
-            "lastName": "Kalloufi",
+            "empNo": "110567",
+            "birthDate": "1964-04-25",
+            "firstName": "Leon",
+            "lastName": "DasSarma",
+            "gender": "F",
+            "hireDate": "1986-10-21"
+          }
+        },
+        {
+          "node": {
+            "empNo": "110420",
+            "birthDate": "1963-07-27",
+            "firstName": "Oscar",
+            "lastName": "Ghazalie",
             "gender": "M",
-            "hireDate": "1995-12-15"
+            "hireDate": "1992-02-05"
+          }
+        },
+        {
+          "node": {
+            "empNo": "111784",
+            "birthDate": "1956-06-14",
+            "firstName": "Marjo",
+            "lastName": "Giarratana",
+            "gender": "F",
+            "hireDate": "1988-02-12"
+          }
+        },
+        {
+          "node": {
+            "empNo": "110511",
+            "birthDate": "1957-07-08",
+            "firstName": "DeForest",
+            "lastName": "Hagimont",
+            "gender": "M",
+            "hireDate": "1985-01-01"
+          }
+        },
+        {
+          "node": {
+            "empNo": "110765",
+            "birthDate": "1954-05-22",
+            "firstName": "Rutger",
+            "lastName": "Hofmeyr",
+            "gender": "F",
+            "hireDate": "1989-01-07"
+          }
+        },
+        {
+          "node": {
+            "empNo": "111035",
+            "birthDate": "1962-02-24",
+            "firstName": "Przemyslawa",
+            "lastName": "Kaelbling",
+            "gender": "M",
+            "hireDate": "1985-01-01"
+          }
+        },
+        {
+          "node": {
+            "empNo": "111534",
+            "birthDate": "1952-06-27",
+            "firstName": "Hilary",
+            "lastName": "Kambil",
+            "gender": "F",
+            "hireDate": "1988-01-31"
           }
         }
       ],
@@ -232,7 +237,12 @@ response:
     "employee": {
       "empNo": "10003",
       "firstName": "Parto",
-      "lastName": "Bamford"
+      "lastName": "Bamford",
+      "isManager": false,
+      "department": {
+        "deptNo": "d004",
+        "deptName": "Production"
+      }
     }
   }
 }

@@ -98,6 +98,11 @@ def test_employee(app, snapshot):
               empNo
               firstName
               lastName
+              isManager
+              department{
+                deptNo
+                deptName
+              }
             }
           }
         """

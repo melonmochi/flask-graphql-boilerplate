@@ -19,8 +19,13 @@ snapshots['test_department 1'] = {
 snapshots['test_employee 1'] = {
     'data': {
         'employee': {
+            'department': {
+                'deptName': 'Production',
+                'deptNo': 'd004'
+            },
             'empNo': '10003',
             'firstName': 'Parto',
+            'isManager': True,
             'lastName': 'Bamford'
         }
     }

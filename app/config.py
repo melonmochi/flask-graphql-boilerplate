@@ -18,7 +18,7 @@ def db_url(connect_args):
 
 # DB URLS for each Environment
 class Config(object):
-    SQLALCHEMY_ECHO = True
+    SQLALCHEMY_ECHO = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
